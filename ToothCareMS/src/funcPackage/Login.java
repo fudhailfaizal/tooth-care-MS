@@ -30,7 +30,7 @@ public class Login {
                 Surgeon.main();
                 break;
 
-            case "Operator":
+            case "Appointments":
                 passwordVerifOperator(passW, confPW);
                 System.out.print("Login Successful! ");
                 Operator.main();
