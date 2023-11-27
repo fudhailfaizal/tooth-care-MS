@@ -27,6 +27,20 @@ public class Menu extends JFrame {
                 ap.setVisible(true);
             }
         });
+        patientsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Appointments apt = new Appointments();
+                apt.setVisible(true);
+            }
+        });
+        billingButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Invoice inv = new Invoice();
+                inv.setVisible(true);
+            }
+        });
     }
     public static void main(String[] args) {
         new Menu();

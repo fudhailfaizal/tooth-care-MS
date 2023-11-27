@@ -45,7 +45,7 @@
           <grid row="7" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Main Menu"/>
+          <text value="Main.Main Menu"/>
         </properties>
       </component>
       <component id="f2d31" class="javax.swing.JButton" binding="updateDetailsButton" default-binding="true">
@@ -120,20 +120,21 @@
         </constraints>
         <properties>
           <model>
-            <item value="1"/>
-            <item value="2"/>
-            <item value="3"/>
-            <item value="4"/>
+            <item value=""/>
+            <item value="Monday 6PM - 9PM"/>
+            <item value="Wednesday 6PM - 9PM"/>
+            <item value="Saturday 3PM - 10PM"/>
+            <item value="Sunday 3PM - 10PM"/>
           </model>
         </properties>
       </component>
       <component id="7dd70" class="javax.swing.JLabel">
         <constraints>
-          <grid row="0" column="3" row-span="1" col-span="7" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="2" row-span="1" col-span="8" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font size="24" style="1"/>
-          <text value="Appointments"/>
+          <text value="Patient Details"/>
         </properties>
       </component>
       <component id="291ea" class="javax.swing.JLabel">
@@ -150,10 +151,12 @@
         </constraints>
         <properties>
           <model>
-            <item value="1"/>
-            <item value="2"/>
-            <item value="3"/>
-            <item value="4"/>
+            <item value=""/>
+            <item value="Cleaning "/>
+            <item value="Whitening"/>
+            <item value="Filling"/>
+            <item value="Nerve Filling"/>
+            <item value="Root Canal Therapy "/>
           </model>
         </properties>
       </component>

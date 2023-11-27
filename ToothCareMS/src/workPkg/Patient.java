@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 public class Patient extends Person {
     int PatientID;
-    int AppointmentID;
+    int aptID;
     LinkedList<Appointments.PatientRecord> patientRecords = new LinkedList<>();
 
     public void make_appointment(int aptIDValue, String nameValue, String addrValue, String numValue, String timeValue, String treatValue) {
