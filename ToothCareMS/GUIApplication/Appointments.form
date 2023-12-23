@@ -79,7 +79,7 @@
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Patient name"/>
+          <text value="PatientWindow name"/>
         </properties>
       </component>
       <component id="7847e" class="javax.swing.JLabel">
@@ -87,7 +87,7 @@
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Patient Address"/>
+          <text value="PatientWindow Address"/>
         </properties>
       </component>
       <component id="3958" class="javax.swing.JLabel">
@@ -95,7 +95,7 @@
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Patient Phone Number"/>
+          <text value="PatientWindow Phone Number"/>
         </properties>
       </component>
       <component id="31734" class="javax.swing.JButton" binding="saveDetailsButton" default-binding="true">

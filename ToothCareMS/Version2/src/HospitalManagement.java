@@ -1,19 +1,31 @@
-import java.io.FilterOutputStream;
+import javax.swing.*;
 import java.util.LinkedList;
 
-public class HospitalManagement {
-    private LinkedList<Patient> patients;
+public class HospitalManagement extends JFrame {
+    private LinkedList<PatientWindow> patients;
     private LinkedList<Appointments> appointments;
     private LinkedList<Treatment> treatments;
-    private final double registrationFee;
+    private final double registrationFee = 1000;
+    private JPanel hospitalPanel;
+    private JTextField textField1;
+    private JButton showInvoicesButton;
+    private JButton createInvoiceButton;
+    private JButton backButton;
 
 
-    public HospitalManagement(double registrationFee) {
+    public HospitalManagement() {
+
+        //UI Setup
+        setContentPane(hospitalPanel);
+        setTitle("Simple GUI App");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(900, 300);
+        setLocationRelativeTo(null);
+        setVisible(true);
 
         this.patients = new LinkedList<>();
         this.appointments = new LinkedList<>();
         this.treatments = new LinkedList<>();
-        this.registrationFee = registrationFee;
         initializeTreatments();
     }
 
@@ -29,6 +41,10 @@ public class HospitalManagement {
         treatments.add(filling);
         treatments.add(nerveFilling);
         treatments.add(rootCanalTherapy);
+    }
+
+    public static void main(String[] args) {
+        new HospitalManagement();
     }
 
 

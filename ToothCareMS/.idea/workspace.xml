@@ -6,12 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="3d31ca40-3190-48ee-a9c5-d4f4f253a75b" name="Changes" comment="Added external classes">
       <change afterPath="$PROJECT_DIR$/Version2/Version2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version2/src/Appointment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Version2/src/Appointments.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/Appointments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version2/src/AppointmentsWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version2/src/HospitalManagement.form" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Version2/src/HospitalManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/Patient.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/Patient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version2/src/PatientWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version2/src/PatientWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version2/src/PatientsWindow.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Version2/src/demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version3/Version3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version3/src/Appointment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version3/src/HospitalManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version3/src/HospitalManagementWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version3/src/HospitalManagementWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version3/src/Patient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version3/src/PatientWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version3/src/PatientWindow.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/GUIApplication/Invoice.form" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/GUIApplication/Invoice.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/workPkg/Cleanings.java" afterDir="false" />
@@ -54,88 +67,105 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/IdeaProjects/ToothCareMS&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.CommitDialog&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "18",
+    "last_opened_file_path": "C:/Users/DELL/IdeaProjects/ToothCareMS/Version3/src",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "GitIgnore"
+    ]
   }
-}</component>
-  <component name="RunManager" selected="Application.Appointments">
-    <configuration name="Appointments" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUIApplication.Appointments" />
-      <module name="ToothCareMS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="GUIApplication.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\IdeaProjects\ToothCareMS\Version3\src" />
+      <recent name="C:\Users\DELL\IdeaProjects\ToothCareMS\Version2\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.PatientWindow (1)">
+    <configuration name="Appointments (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Appointments" />
+      <module name="Version2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Invoice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUIApplication.Invoice" />
-      <module name="ToothCareMS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="GUIApplication.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="AppointmentsWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AppointmentsWindow" />
+      <module name="Version3" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main.Main" />
-      <module name="Attempt2" />
+    <configuration name="Patient (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Patient" />
+      <module name="Version2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUIApplication.Menu" />
-      <module name="ToothCareMS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="GUIApplication.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="Patient (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Patient" />
+      <module name="Version2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUIApplication.Menu" />
-      <module name="ToothCareMS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="GUIApplication.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="PatientWindow (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PatientWindow" />
+      <module name="Version3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PatientWindow" />
+      <module name="Version2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PatientWindow" />
+      <module name="Version2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PatientWindow" />
+      <module name="Version2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PatientWindow" />
+      <module name="Version2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Appointments" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Menu (2)" />
-        <item itemvalue="Application.Menu (1)" />
-        <item itemvalue="Application.Invoice" />
+        <item itemvalue="Application.PatientWindow (1)" />
+        <item itemvalue="Application.AppointmentsWindow" />
+        <item itemvalue="Application.PatientWindow" />
+        <item itemvalue="Application.PatientWindow" />
+        <item itemvalue="Application.PatientWindow" />
       </list>
     </recent_temporary>
   </component>
@@ -184,6 +214,7 @@
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added Swing UI Components" />
     <MESSAGE value="Added external classes" />
     <option name="LAST_COMMIT_MESSAGE" value="Added external classes" />

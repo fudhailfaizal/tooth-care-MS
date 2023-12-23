@@ -2,7 +2,7 @@
 //import java.util.Date;
 //import java.util.Timer;
 //
-//class Patient {
+//class PatientWindow {
 //    private int patientID;
 //    private String name;
 //    private String address;
@@ -23,7 +23,7 @@
 //    public Date appointmentDate;
 //    public Time appointmentTime;
 //
-//    Patient patient = new Patient();
+//    PatientWindow patient = new PatientWindow();
 //    Treatment treatment = new Treatment();
 //
 //    public Boolean IsRegistered;
