@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Patient {
     private int patientID = 0;
-    private ArrayList<String> patientList = new ArrayList<>();
+    public ArrayList<String> patientList = new ArrayList<>();
 
     public void addPatient(String name, String address, int phoneNumber) {
         patientID++;

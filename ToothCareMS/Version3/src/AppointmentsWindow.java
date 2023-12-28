@@ -19,10 +19,12 @@ public class AppointmentsWindow extends JFrame {
     private Patient patient = new Patient();
 
     private Appointment appointmentLogic = new Appointment();
-    private ArrayList<String> patientList;
+    private ArrayList<String> patientList = new ArrayList<>();
 
     public AppointmentsWindow(ArrayList<String> patientList) {
-        this.patientList = patientList;
+        if(patient.patientList!=null) {
+            this.patientList.addAll(patient.patientList);
+        }
 
         setContentPane(appointmentsPanel);
         setTitle("Simple GUI App");
