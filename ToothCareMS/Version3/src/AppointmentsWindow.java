@@ -17,6 +17,7 @@ public class AppointmentsWindow extends JFrame {
     private JTextField patientIDSearch;
 
     private Appointment appointmentLogic = new Appointment();
+<<<<<<< HEAD
     private Patient patient = Patient.getInstance();
     private ArrayList<String> patientList = new ArrayList<>();
 
@@ -24,6 +25,13 @@ public class AppointmentsWindow extends JFrame {
     public AppointmentsWindow(ArrayList<String> patientList) {
         if(patient.getPatientList()!=null) {
             this.patientList.addAll(patient.getPatientList());
+=======
+    private ArrayList<String> patientList = new ArrayList<>();
+
+    public AppointmentsWindow(ArrayList<String> patientList) {
+        if(patient.patientList!=null) {
+            this.patientList.addAll(patient.patientList);
+>>>>>>> 3a2ef4eca69749fe6f1c15b141051e5255aab7ad
         }
 
         setContentPane(appointmentsPanel);
