@@ -10,6 +10,14 @@ public class Patient {
                 patientID, name, address, phoneNumber);
         patientList.add(patientInfo);
     }
+    public String findPatientDetails(String patientID) {
+        for (String patientInfo : patientList) {
+            if (patientInfo.contains("Patient ID: " + patientID)) {
+                return patientInfo;
+            }
+        }
+        return null; // Or an empty string or a message indicating not found
+    }
 
     public ArrayList<String> getPatientList() {
         return patientList;

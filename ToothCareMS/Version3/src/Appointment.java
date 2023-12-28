@@ -29,4 +29,16 @@ public class Appointment {
     public ArrayList<String> getPatientListFromPatientClass() {
         return patient.getPatientList();
     }
+
+    public String findPatientDetails(String patientID, ArrayList<String> patientList) {
+        for (String patient : patientList) {
+            String[] patientDetails = patient.split(", "); // Split details by comma and space
+            for (String detail : patientDetails) {
+                if (detail.startsWith("Patient ID:") && detail.contains(patientID)) {
+                    return patient;
+                }
+            }
+        }
+        return null;
+    }
 }

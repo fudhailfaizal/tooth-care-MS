@@ -12,6 +12,7 @@ public class PatientWindow extends JFrame {
     private JPanel patientPanel;
 
     private Patient patientLogic = new Patient();
+    private int patientIDCounter = 0;
 
     public PatientWindow() {
 
@@ -29,10 +30,14 @@ public class PatientWindow extends JFrame {
                 String address = addressField.getText();
                 int phoneNumber = Integer.parseInt(numberField.getText());
 
+                patientIDCounter++;
+                String patientID = String.valueOf(patientIDCounter);
+
                 patientLogic.addPatient(name, address, phoneNumber);
-                JOptionPane.showMessageDialog(null, "Information Entered:\nName: " + name +
-                                "\nAddress: " + address + "\nPhone Number: " + phoneNumber,
+                JOptionPane.showMessageDialog(null, "Information Entered:\nPatient ID: " + patientID +
+                                "\nName: " + name + "\nAddress: " + address + "\nPhone Number: " + phoneNumber,
                         "Patient Information", JOptionPane.INFORMATION_MESSAGE);
+
 
                 // Clear fields
                 clearFields();

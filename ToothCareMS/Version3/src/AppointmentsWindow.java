@@ -1,11 +1,9 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class AppointmentsWindow extends JFrame {
-    private JComboBox<String> patientPicker;
     private JComboBox<String> treatmentPicker;
     private JButton addPatientButton;
     private JComboBox datePicker;
@@ -16,6 +14,9 @@ public class AppointmentsWindow extends JFrame {
     private JButton updateButton;
     private JButton saveButton;
     private JPanel appointmentsPanel;
+    private JTextField patientIDSearch;
+
+    private Patient patient = new Patient();
 
     private Appointment appointmentLogic = new Appointment();
     private ArrayList<String> patientList;
@@ -30,23 +31,31 @@ public class AppointmentsWindow extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
 
-        populatePatientPicker();
+
 
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String selectedPatientID = (String) patientPicker.getSelectedItem();
+                String patientID = patientIDSearch.getText();
                 String selectedTreatmentID = (String) treatmentPicker.getSelectedItem();
                 String selectedDate = (String) datePicker.getSelectedItem();
                 String selectedTime = (String) timePicker.getSelectedItem();
 
-                appointmentLogic.scheduleAppointment(selectedPatientID, selectedTreatmentID, selectedDate, selectedTime);
-                JOptionPane.showMessageDialog(null, "Appointment Scheduled:\nPatient ID: " + selectedPatientID +
-                                "\nTreatment ID: " + selectedTreatmentID + "\nDate: " + selectedDate + "\nTime: " + selectedTime,
-                        "Appointment Information", JOptionPane.INFORMATION_MESSAGE);
+                // Search for patient details using patientID
+                String patientDetails = appointmentLogic.findPatientDetails(patientID, patientList);
 
-                // Clear fields
-                clearFields();
+                if (patientDetails != null) {
+                    // Patient found, proceed to schedule appointment
+                    appointmentLogic.scheduleAppointment(patientID, selectedTreatmentID, selectedDate, selectedTime);
+                    JOptionPane.showMessageDialog(null, "Appointment Scheduled:\nPatient ID: " + patientID +
+                                    "\nTreatment ID: " + selectedTreatmentID + "\nDate: " + selectedDate + "\nTime: " + selectedTime,
+                            "Appointment Information", JOptionPane.INFORMATION_MESSAGE);
+
+                    // Clear fields
+                    clearFields();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Patient not found!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
     }
@@ -54,15 +63,10 @@ public class AppointmentsWindow extends JFrame {
     private void clearFields() {
         appointmentID.setText("");
         // Clear combo boxes
-        patientPicker.setSelectedIndex(0);
+        patientIDSearch.setText("");
         treatmentPicker.setSelectedIndex(0);
         datePicker.setSelectedIndex(0);
         timePicker.setSelectedIndex(0);
-    }
-    private void populatePatientPicker() {
-        for (String patient : appointmentLogic.getPatientListFromPatientClass()) {
-            patientPicker.addItem(patient);
-        }
     }
 
     public static void main(String[] args) {

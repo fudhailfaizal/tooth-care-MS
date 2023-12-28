@@ -5,41 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d31ca40-3190-48ee-a9c5-d4f4f253a75b" name="Changes" comment="Added external classes">
-      <change afterPath="$PROJECT_DIR$/Version2/Version2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/Appointment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/Appointments.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/AppointmentsWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/HospitalManagement.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/HospitalManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/PatientWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/PatientWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/PatientsWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version2/src/demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version3/Version3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version3/src/Appointment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version3/src/HospitalManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version3/src/HospitalManagementWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version3/src/HospitalManagementWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version3/src/Patient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version3/src/PatientWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Version3/src/PatientWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUIApplication/Invoice.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUIApplication/Invoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/workPkg/Cleanings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/workPkg/Filling.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/workPkg/NerveFilling.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/workPkg/RootCanalTherapy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/workPkg/Whitening.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUIApplication/Appointments.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIApplication/Appointments.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUIApplication/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIApplication/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/workPkg/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/workPkg/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/workPkg/Treatment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/workPkg/Treatment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Version3/src/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Version3/src/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Version3/src/PatientWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/PatientWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,28 +38,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "18",
-    "last_opened_file_path": "C:/Users/DELL/IdeaProjects/ToothCareMS/Version3/src",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/IdeaProjects/ToothCareMS/Version3/src&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.CommitDialog&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "GitIgnore"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;GitIgnore&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\DELL\IdeaProjects\ToothCareMS\Version3\src" />
