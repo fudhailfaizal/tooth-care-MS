@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class AppointmentsWindow extends JFrame {
+    // GUI components
     private JComboBox<String> treatmentPicker;
     private JButton addPatientButton;
     private JComboBox datePicker;
@@ -16,38 +17,25 @@ public class AppointmentsWindow extends JFrame {
     private JPanel appointmentsPanel;
     private JTextField patientIDSearch;
 
+    // Logic components
     private Appointment appointmentLogic = new Appointment();
-<<<<<<< HEAD
     private Patient patient = Patient.getInstance();
     private ArrayList<String> patientList = new ArrayList<>();
 
-
+    // Constructor
     public AppointmentsWindow(ArrayList<String> patientList) {
-        if(patient.getPatientList()!=null) {
-            this.patientList.addAll(patient.getPatientList());
-=======
-    private ArrayList<String> patientList = new ArrayList<>();
+        initializeUI();
+        setupActionListeners();
+        this.patientList.addAll(patientList);
+    }
 
-    public AppointmentsWindow(ArrayList<String> patientList) {
-        if(patient.patientList!=null) {
-            this.patientList.addAll(patient.patientList);
->>>>>>> 3a2ef4eca69749fe6f1c15b141051e5255aab7ad
-        }
-
-        setContentPane(appointmentsPanel);
-        setTitle("Simple GUI App");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(900, 300);
-        setLocationRelativeTo(null);
-        setVisible(true);
-
-
-
+    // Sets up action listeners for buttons
+    private void setupActionListeners() {
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Retrieve user input
                 String patientID = patientIDSearch.getText();
-                System.out.println("hi");
                 String selectedTreatmentID = (String) treatmentPicker.getSelectedItem();
                 String selectedDate = (String) datePicker.getSelectedItem();
                 String selectedTime = (String) timePicker.getSelectedItem();
@@ -55,24 +43,61 @@ public class AppointmentsWindow extends JFrame {
                 // Search for patient details using patientID
                 String patientDetails = appointmentLogic.findPatientDetails(patientID, appointmentLogic.getPatientListFromPatientClass());
 
-                System.out.println("hello!");
-
                 if (patientDetails != null) {
                     // Patient found, proceed to schedule appointment
                     appointmentLogic.scheduleAppointment(patientID, selectedTreatmentID, selectedDate, selectedTime);
+                    // Display success message
                     JOptionPane.showMessageDialog(null, "Appointment Scheduled:\nPatient ID: " + patientID +
                                     "\nTreatment ID: " + selectedTreatmentID + "\nDate: " + selectedDate + "\nTime: " + selectedTime,
                             "Appointment Information", JOptionPane.INFORMATION_MESSAGE);
-
                     // Clear fields
                     clearFields();
                 } else {
+                    // Display error message if patient not found
                     JOptionPane.showMessageDialog(null, "Patient not found!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
+
+        // ActionListener for adding a new patient
+        addPatientButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openPatientWindow(); // Open the PatientWindow
+            }
+        });
+
+        // ActionListener for exiting the application
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0); // Close the application
+            }
+        });
     }
 
+    // Initialize UI and set window properties
+    private void initializeUI() {
+        setContentPane(appointmentsPanel);
+        setTitle("Appointment Management");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(700, 300);
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
+    // Open the PatientWindow
+    private void openPatientWindow() {
+        PatientWindow patientWindow = new PatientWindow();
+        patientWindow.setTitle("Patient Management");
+        patientWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        patientWindow.setSize(700, 300);
+        patientWindow.setLocationRelativeTo(null);
+        patientWindow.setVisible(true);
+        dispose(); // Close the current AppointmentsWindow
+    }
+
+    // Clear fields after an action
     private void clearFields() {
         appointmentID.setText("");
         // Clear combo boxes
@@ -82,15 +107,17 @@ public class AppointmentsWindow extends JFrame {
         timePicker.setSelectedIndex(0);
     }
 
+    // Entry point for the application
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             Appointment appointmentLogic = new Appointment();
             ArrayList<String> patientsList = appointmentLogic.getPatientListFromPatientClass();
 
+            // Initialize and display the AppointmentsWindow
             AppointmentsWindow appointmentsWindow = new AppointmentsWindow(patientsList);
             appointmentsWindow.setTitle("Appointment Management");
             appointmentsWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            appointmentsWindow.setSize(400, 300);
+            appointmentsWindow.setSize(700, 300);
             appointmentsWindow.setLocationRelativeTo(null);
             appointmentsWindow.setVisible(true);
         });

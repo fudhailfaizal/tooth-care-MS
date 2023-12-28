@@ -10,8 +10,12 @@
       <change beforePath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version3/src/HospitalManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/HospitalManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Version3/src/HospitalManagementWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/HospitalManagementWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Version3/src/HospitalManagementWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/HospitalManagementWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version3/src/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Version3/src/PatientWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/PatientWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version3/src/PatientWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/PatientWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIApplication/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIApplication/Login.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,14 +71,7 @@
       <recent name="C:\Users\DELL\IdeaProjects\ToothCareMS\Version2\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PatientWindow (1)">
-    <configuration name="Appointments (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Appointments" />
-      <module name="Version2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.HospitalManagementWindow">
     <configuration name="AppointmentsWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AppointmentsWindow" />
       <module name="Version3" />
@@ -82,9 +79,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Patient (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Patient" />
-      <module name="Version2" />
+    <configuration name="HospitalManagementWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HospitalManagementWindow" />
+      <module name="Version3" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,9 +130,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PatientWindow (1)" />
+        <item itemvalue="Application.HospitalManagementWindow" />
         <item itemvalue="Application.AppointmentsWindow" />
-        <item itemvalue="Application.PatientWindow" />
+        <item itemvalue="Application.PatientWindow (1)" />
         <item itemvalue="Application.PatientWindow" />
         <item itemvalue="Application.PatientWindow" />
       </list>
