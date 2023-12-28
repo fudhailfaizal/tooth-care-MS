@@ -1,8 +1,20 @@
 import java.util.ArrayList;
 
 public class Patient {
+
+    //creating singleton
+
+    static Patient obj = new Patient();
+    private Patient() {
+
+    }
+    public static Patient getInstance() {
+        return obj;
+    }
+
+
     private int patientID = 0;
-    private ArrayList<String> patientList = new ArrayList<>();
+    public ArrayList<String> patientList = new ArrayList<>();
 
     public void addPatient(String name, String address, int phoneNumber) {
         patientID++;

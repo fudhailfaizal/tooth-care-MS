@@ -16,13 +16,15 @@ public class AppointmentsWindow extends JFrame {
     private JPanel appointmentsPanel;
     private JTextField patientIDSearch;
 
-    private Patient patient = new Patient();
-
     private Appointment appointmentLogic = new Appointment();
-    private ArrayList<String> patientList;
+    private Patient patient = Patient.getInstance();
+    private ArrayList<String> patientList = new ArrayList<>();
+
 
     public AppointmentsWindow(ArrayList<String> patientList) {
-        this.patientList = patientList;
+        if(patient.getPatientList()!=null) {
+            this.patientList.addAll(patient.getPatientList());
+        }
 
         setContentPane(appointmentsPanel);
         setTitle("Simple GUI App");
@@ -37,12 +39,15 @@ public class AppointmentsWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String patientID = patientIDSearch.getText();
+                System.out.println("hi");
                 String selectedTreatmentID = (String) treatmentPicker.getSelectedItem();
                 String selectedDate = (String) datePicker.getSelectedItem();
                 String selectedTime = (String) timePicker.getSelectedItem();
 
                 // Search for patient details using patientID
-                String patientDetails = appointmentLogic.findPatientDetails(patientID, patientList);
+                String patientDetails = appointmentLogic.findPatientDetails(patientID, appointmentLogic.getPatientListFromPatientClass());
+
+                System.out.println("hello!");
 
                 if (patientDetails != null) {
                     // Patient found, proceed to schedule appointment

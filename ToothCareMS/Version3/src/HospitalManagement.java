@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class HospitalManagement {
     public static void main(String[] args) {
         // Create an instance of the Patient class
-        Patient patient = new Patient();
+        Patient patient = Patient.getInstance();
 
         // Add patients to the patient list
         patient.addPatient("John Doe", "123 Main St", 1234567890);

@@ -5,7 +5,7 @@ public class Appointment {
     private ArrayList<String> treatmentList = new ArrayList<>();
     private ArrayList<String> appointmentList = new ArrayList<>();
 
-    private Patient patient = new Patient();
+    Patient patient = Patient.getInstance();
 
     public void addPatient(String patientInfo) {
         patientList.add(patientInfo);
@@ -33,6 +33,7 @@ public class Appointment {
     public String findPatientDetails(String patientID, ArrayList<String> patientList) {
         for (String patient : patientList) {
             String[] patientDetails = patient.split(", "); // Split details by comma and space
+            System.out.println(patientDetails);
             for (String detail : patientDetails) {
                 if (detail.startsWith("Patient ID:") && detail.contains(patientID)) {
                     return patient;

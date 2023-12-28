@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/Version3/src/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/Appointment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/AppointmentsWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Version3/src/HospitalManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/HospitalManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version3/src/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version3/src/PatientWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Version3/src/PatientWindow.java" afterDir="false" />
     </list>
@@ -48,7 +49,7 @@
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/IdeaProjects/ToothCareMS/Version3/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/IdeaProjects/ToothCareMS&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,

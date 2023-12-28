@@ -11,7 +11,7 @@ public class PatientWindow extends JFrame {
     private JButton enter;
     private JPanel patientPanel;
 
-    private Patient patientLogic = new Patient();
+    private Patient patientLogic = Patient.getInstance();
     private int patientIDCounter = 0;
 
     public PatientWindow() {
@@ -37,7 +37,6 @@ public class PatientWindow extends JFrame {
                 JOptionPane.showMessageDialog(null, "Information Entered:\nPatient ID: " + patientID +
                                 "\nName: " + name + "\nAddress: " + address + "\nPhone Number: " + phoneNumber,
                         "Patient Information", JOptionPane.INFORMATION_MESSAGE);
-
 
                 // Clear fields
                 clearFields();
@@ -65,9 +64,7 @@ public class PatientWindow extends JFrame {
 
     private void openAppointmentsWindow() {
 
-        Appointment appointmentLogic = new Appointment();
-
-        AppointmentsWindow appointmentsWindow = new AppointmentsWindow(appointmentLogic.getPatientListFromPatientClass());
+        AppointmentsWindow appointmentsWindow = new AppointmentsWindow(patientLogic.getPatientList());
         appointmentsWindow.setTitle("Appointment Management");
         appointmentsWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         appointmentsWindow.setSize(400, 300);
