@@ -15,7 +15,7 @@ public class Appointment {
         treatmentList.add(treatmentInfo);
     }
 
-    public void scheduleAppointment(String patientID, String treatmentID, String date, String time) {
+    public void scheduleAppointment(int patientID, String treatmentID, String date, String time) {
         int newAppointmentID = appointmentList.size() + 1;
         String appointmentInfo = String.format("Appointment ID: %d, Patient ID: %s, Treatment ID: %s, Date: %s, Time: %s",
                 newAppointmentID, patientID, treatmentID, date, time);
@@ -26,18 +26,15 @@ public class Appointment {
         return appointmentList;
     }
 
-    public ArrayList<String> getPatientListFromPatientClass() {
-        return patient.getPatientList();
+    public ArrayList<Patient> getPatientListFromPatientClass() {
+        return Patient.patientList;
     }
 
-    public String findPatientDetails(String patientID, ArrayList<String> patientList) {
-        for (String patient : patientList) {
-            String[] patientDetails = patient.split(", "); // Split details by comma and space
-            for (String detail : patientDetails) {
-                if (detail.startsWith("Patient ID:") && detail.contains(patientID)) {
+    public Patient findPatientDetails(int patientID, ArrayList<Patient> patientList) {
+        for (Patient patient : patientList) {// Spl
+                if (patientID == patient.getPatientID()) {
                     return patient;
                 }
-            }
         }
         return null;
     }

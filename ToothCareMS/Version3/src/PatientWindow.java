@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 
 public class PatientWindow extends JFrame {
@@ -10,8 +9,6 @@ public class PatientWindow extends JFrame {
     private JTextField numberField;
     private JButton enter;
     private JPanel patientPanel;
-
-    private Patient patientLogic = new Patient();
     private int patientIDCounter = 0;
 
     public PatientWindow() {
@@ -28,12 +25,15 @@ public class PatientWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String name = nameField.getText();
                 String address = addressField.getText();
-                int phoneNumber = Integer.parseInt(numberField.getText());
+                String phoneNumber = numberField.getText();
 
                 patientIDCounter++;
                 String patientID = String.valueOf(patientIDCounter);
-
-                patientLogic.addPatient(name, address, phoneNumber);
+                Patient patient = new Patient();
+                patient.setName(name);
+                patient.setPhoneNumber(phoneNumber);
+                patient.setAddress(address);
+                patient.addPatient();
                 JOptionPane.showMessageDialog(null, "Information Entered:\nPatient ID: " + patientID +
                                 "\nName: " + name + "\nAddress: " + address + "\nPhone Number: " + phoneNumber,
                         "Patient Information", JOptionPane.INFORMATION_MESSAGE);

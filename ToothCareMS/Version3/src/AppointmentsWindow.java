@@ -19,13 +19,8 @@ public class AppointmentsWindow extends JFrame {
     private Patient patient = new Patient();
 
     private Appointment appointmentLogic = new Appointment();
-    private ArrayList<String> patientList = new ArrayList<>();
 
-    public AppointmentsWindow(ArrayList<String> patientList) {
-        if(patient.patientList!=null) {
-            this.patientList.addAll(patient.patientList);
-        }
-
+    public AppointmentsWindow(ArrayList<Patient> patientList) {
         setContentPane(appointmentsPanel);
         setTitle("Simple GUI App");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -38,13 +33,13 @@ public class AppointmentsWindow extends JFrame {
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String patientID = patientIDSearch.getText();
+                int patientID = Integer.parseInt(patientIDSearch.getText()) ;
                 String selectedTreatmentID = (String) treatmentPicker.getSelectedItem();
                 String selectedDate = (String) datePicker.getSelectedItem();
                 String selectedTime = (String) timePicker.getSelectedItem();
 
                 // Search for patient details using patientID
-                String patientDetails = appointmentLogic.findPatientDetails(patientID, patientList);
+                Patient patientDetails = appointmentLogic.findPatientDetails(patientID, patientList);
 
                 if (patientDetails != null) {
                     // Patient found, proceed to schedule appointment
@@ -74,7 +69,7 @@ public class AppointmentsWindow extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             Appointment appointmentLogic = new Appointment();
-            ArrayList<String> patientsList = appointmentLogic.getPatientListFromPatientClass();
+            ArrayList<Patient> patientsList = appointmentLogic.getPatientListFromPatientClass();
 
             AppointmentsWindow appointmentsWindow = new AppointmentsWindow(patientsList);
             appointmentsWindow.setTitle("Appointment Management");

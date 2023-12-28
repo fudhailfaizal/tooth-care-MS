@@ -6,15 +6,22 @@ public class HospitalManagement {
         Patient patient = new Patient();
 
         // Add patients to the patient list
-        patient.addPatient("John Doe", "123 Main St", 1234567890);
-        patient.addPatient("Alice Smith", "456 Elm St", 987654321);
+        patient.setName("John Doe");
+        patient.setAddress("123 Main St");
+        patient.setPhoneNumber("1234567890");
+        patient.addPatient();
+
+        patient.setName("Alice Smith");
+        patient.setAddress("456 Elm St");
+        patient.setPhoneNumber("987654321");
+        patient.addPatient();
 
         // Retrieve the list of patients
-        ArrayList<String> patientsList = patient.getPatientList();
+        ArrayList<Patient> patientsList = Patient.patientList;
 
         // Display the list of patients (for demonstration purposes)
-        for (String patientInfo : patientsList) {
-            System.out.println(patientInfo);
+        for (Patient patientInfo : patientsList) {
+            System.out.println(patientInfo.toString());
         }
 
         // Here you can coordinate other aspects of your hospital management system
