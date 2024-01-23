@@ -18,7 +18,7 @@ public class Patient {
     }
 
     private int patientID = 0; // Initializing patient ID counter
-    public ArrayList<String> patientList = new ArrayList<>(); // List to store patient information
+    private ArrayList<String> patientList = new ArrayList<>(); // List to store patient information
 
     // Adds a new patient to the patient list
     public void addPatient(String name, String address, int phoneNumber) {
@@ -27,16 +27,25 @@ public class Patient {
         String patientInfo = String.format("Patient ID: %d, Name: %s, Address: %s, Phone Number: %s",
                 patientID, name, address, phoneNumber);
         patientList.add(patientInfo);
+
+        System.out.println("Patient List: " + patientList);
     }
 
     // Finds patient details based on provided patient ID
-    public String findPatientDetails(String patientID) {
+    public String findPatientDetails(int patientID) {
         for (String patientInfo : patientList) {
+            System.out.println("Checking: " + patientInfo);
             if (patientInfo.contains("Patient ID: " + patientID)) {
-                return patientInfo; // Return patient information
+                System.out.println("Found: " + patientInfo);
+                return patientInfo;
             }
         }
-        return null; // Return null if patient is not found
+        return null; // Return null if patient details are not found
+    }
+
+    // Clear existing patients (remove dummy patients)
+    public void clearPatients() {
+        patientList.clear();
     }
 
     // Retrieves the list of patients

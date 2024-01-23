@@ -54,6 +54,8 @@ public class PatientWindow extends JFrame {
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage(), "Invalid Input", JOptionPane.ERROR_MESSAGE);
                 }
+
+
             }
         });
 

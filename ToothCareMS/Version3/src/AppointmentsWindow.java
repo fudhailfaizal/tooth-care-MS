@@ -16,10 +16,14 @@ public class AppointmentsWindow extends JFrame {
     private JButton saveButton;
     private JPanel appointmentsPanel;
     private JTextField patientIDSearch;
+    private JButton viewButton;
+    private JTextArea resultTextArea;
+    private boolean saveButtonClicked = false;
 
     // Logic components
-    private Appointment appointmentLogic = new Appointment();
+    private Appointment appointmentLogic = Appointment.getInstance();
     private Patient patient = Patient.getInstance();
+
     private ArrayList<String> patientList = new ArrayList<>();
 
     // Constructor
@@ -27,34 +31,63 @@ public class AppointmentsWindow extends JFrame {
         initializeUI();
         setupActionListeners();
         this.patientList.addAll(patientList);
+
     }
 
     // Sets up action listeners for buttons
     private void setupActionListeners() {
+
+        viewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Open the TableViewWindow
+                TableViewWindow tableViewWindow = new TableViewWindow();
+                tableViewWindow.setTitle("Appointment Table View");
+                tableViewWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                tableViewWindow.setSize(700, 300);
+                tableViewWindow.setLocationRelativeTo(null);
+                tableViewWindow.setVisible(true);
+                // Dispose the current window if needed
+                dispose();
+            }
+        });
+        // Save button
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Retrieve user input
-                String patientID = patientIDSearch.getText();
-                String selectedTreatmentID = (String) treatmentPicker.getSelectedItem();
-                String selectedDate = (String) datePicker.getSelectedItem();
-                String selectedTime = (String) timePicker.getSelectedItem();
+                // Set the flag to indicate that saveButton was clicked
+                saveButtonClicked = true;
 
-                // Search for patient details using patientID
-                String patientDetails = appointmentLogic.findPatientDetails(patientID, appointmentLogic.getPatientListFromPatientClass());
+                // Call the saveAppointment method
+                saveAppointment();
 
-                if (patientDetails != null) {
-                    // Patient found, proceed to schedule appointment
-                    appointmentLogic.scheduleAppointment(patientID, selectedTreatmentID, selectedDate, selectedTime);
-                    // Display success message
-                    JOptionPane.showMessageDialog(null, "Appointment Scheduled:\nPatient ID: " + patientID +
-                                    "\nTreatment ID: " + selectedTreatmentID + "\nDate: " + selectedDate + "\nTime: " + selectedTime,
-                            "Appointment Information", JOptionPane.INFORMATION_MESSAGE);
-                    // Clear fields
-                    clearFields();
+                // Reset the flag after processing
+                saveButtonClicked = false;
+            }
+        });
+
+        // Update button
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Call the updateAppointment method
+                updateAppointment();
+            }
+        });
+
+        // Search functionality
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String appointmentIDInput = appointmentID.getText();
+
+                // Get appointment details based on the appointment ID
+                String appointmentDetails = appointmentLogic.getAppointmentDetails(appointmentIDInput);
+
+                if (!appointmentDetails.equals("Appointment ID not found")) {
+                    JOptionPane.showMessageDialog(null, appointmentDetails, "Appointment Details", JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                    // Display error message if patient not found
-                    JOptionPane.showMessageDialog(null, "Patient not found!", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Appointment not found!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -75,6 +108,7 @@ public class AppointmentsWindow extends JFrame {
             }
         });
     }
+
 
     // Initialize UI and set window properties
     private void initializeUI() {
@@ -110,7 +144,7 @@ public class AppointmentsWindow extends JFrame {
     // Entry point for the application
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            Appointment appointmentLogic = new Appointment();
+            Appointment appointmentLogic = Appointment.getInstance();
             ArrayList<String> patientsList = appointmentLogic.getPatientListFromPatientClass();
 
             // Initialize and display the AppointmentsWindow
@@ -122,4 +156,73 @@ public class AppointmentsWindow extends JFrame {
             appointmentsWindow.setVisible(true);
         });
     }
+
+    // Separate method for saving an appointment
+    private void saveAppointment() {
+        // Retrieve user input
+        String patientID = patientIDSearch.getText();
+        String selectedTreatmentID = (String) treatmentPicker.getSelectedItem();
+        String selectedDate = (String) datePicker.getSelectedItem();
+        String selectedTime = (String) timePicker.getSelectedItem();
+
+        // Check if the appointment ID already exists
+        if (appointmentLogic.appointmentExists(patientID)) {
+            // Appointment exists, display error message
+            JOptionPane.showMessageDialog(null, "Appointment already exists, please update instead.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            // Appointment does not exist, proceed to schedule appointment
+            appointmentLogic.scheduleAppointment(patientID, selectedTreatmentID, selectedDate, selectedTime);
+            // Display success message
+            JOptionPane.showMessageDialog(null, "Appointment Scheduled:\nPatient ID: " + patientID +
+                            "\nTreatment ID: " + selectedTreatmentID + "\nDate: " + selectedDate + "\nTime: " + selectedTime,
+                    "Appointment Information", JOptionPane.INFORMATION_MESSAGE);
+            // Clear fields
+            clearFields();
+        }
+    }
+
+
+
+    private void updateAppointment() {
+        // Get updated appointment details from text fields or combo boxes
+        String updatedAppointmentID = appointmentID.getText();
+        String updatedPatientID = patientIDSearch.getText();
+        String updatedTreatmentID = (String) treatmentPicker.getSelectedItem();
+        String updatedDate = (String) datePicker.getSelectedItem();
+        String updatedTime = (String) timePicker.getSelectedItem();
+
+        if (saveButtonClicked) {
+            return;
+        }
+
+        if (!updatedAppointmentID.isEmpty() && !updatedPatientID.isEmpty() && !updatedTreatmentID.isEmpty() && !updatedDate.isEmpty() && !updatedTime.isEmpty()) {
+            // Check if the appointment ID already exists
+            if (appointmentLogic.appointmentExists(updatedAppointmentID)) {
+                // Prompt the user for confirmation
+                int choice = JOptionPane.showConfirmDialog(null,
+                        "An appointment with ID " + updatedAppointmentID + " already exists. Do you want to override it?",
+                        "Confirmation", JOptionPane.YES_NO_OPTION);
+
+                if (choice == JOptionPane.YES_OPTION) {
+                    // Update the appointment details
+                    appointmentLogic.updateAppointment(updatedAppointmentID, updatedPatientID, updatedTreatmentID, updatedDate, updatedTime);
+                    JOptionPane.showMessageDialog(null, "Appointment Updated Successfully!", "Update Result", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    // User chose not to override
+                    JOptionPane.showMessageDialog(null, "Update canceled by user.", "Update Canceled", JOptionPane.INFORMATION_MESSAGE);
+                }
+            } else {
+                // Appointment does not exist, treat it as a new appointment and save
+                appointmentLogic.scheduleAppointment(updatedPatientID, updatedTreatmentID, updatedDate, updatedTime);
+                JOptionPane.showMessageDialog(null, "Appointment Scheduled Successfully!", "Scheduling Result", JOptionPane.INFORMATION_MESSAGE);
+            }
+            // Clear fields
+            clearFields();
+        } else {
+            // Display a message if any field is blank
+            JOptionPane.showMessageDialog(null, "Please fill in all details!", "Incomplete Information", JOptionPane.WARNING_MESSAGE);
+        }
+
+    }
+
 }

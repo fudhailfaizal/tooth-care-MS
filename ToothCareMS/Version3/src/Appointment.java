@@ -1,56 +1,121 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Appointment {
-    // Lists to store treatments and appointments
-    private ArrayList<String> treatmentList = new ArrayList<>();
-    private ArrayList<String> appointmentList = new ArrayList<>();
 
-    // Map for efficient patient lookup using ID as the key
-    private Map<Integer, String> patientMap = new HashMap<>();
+    // Singleton implementation
+    private static final Appointment instance = new Appointment();
 
-    // Adds patient information to the patient map
-    public void addPatient(String patientInfo) {
-        patientMap.put(patientMap.size() + 1, patientInfo); // ID-based addition
+    // Private constructor to prevent external instantiation
+    private Appointment() {
     }
 
-    // Adds treatment information to the treatment list
+    // Method to access the singleton instance
+    public static Appointment getInstance() {
+        return instance;
+    }
+
+    private ArrayList<String> treatmentList = new ArrayList<>();
+    private ArrayList<String> appointmentList = new ArrayList<>();
+    private Map<Integer, String> patientMap = new HashMap<>();
+
+    public void addPatient(String patientInfo) {
+        patientMap.put(patientMap.size() + 1, patientInfo);
+    }
+
     public void addTreatment(String treatmentInfo) {
         treatmentList.add(treatmentInfo);
     }
 
-    // Creates a new appointment and adds it to the appointment list
-    public void scheduleAppointment(String patientID, String treatmentID, String date, String time) {
+    public void scheduleAppointment(String patientID, String treatmentType, String date, String time) {
         int newAppointmentID = appointmentList.size() + 1;
-        String appointmentInfo = String.format("Appointment ID: %d, Patient ID: %s, Treatment ID: %s, Date: %s, Time: %s",
-                newAppointmentID, patientID, treatmentID, date, time);
-        appointmentList.add(appointmentInfo);
+        String patientInfo = findPatientDetails(patientID);
+
+        if (patientInfo != null) {
+            String appointmentInfo = String.format("Appointment ID: %d, %s, Treatment Type: %s, Date: %s, Time: %s",
+                    newAppointmentID, patientInfo, treatmentType, date, time);
+            appointmentList.add(appointmentInfo);
+        } else {
+            System.out.println("Patient not found for ID: " + patientID);
+        }
+
+        System.out.println("Appointment List: " + appointmentList);
     }
 
-    // Retrieves the list of appointments
     public ArrayList<String> getAppointmentList() {
         return appointmentList;
     }
 
-    // Retrieves the patient list from the Patient class (assuming Patient class has a method to get patient list)
     public ArrayList<String> getPatientListFromPatientClass() {
-        Patient patient = Patient.getInstance(); // Accessing patient list from Patient class
+        Patient patient = Patient.getInstance();
         return patient.getPatientList();
     }
 
-    // Finds patient details based on patient ID in a provided list of patient information
-    public String findPatientDetails(String patientID, ArrayList<String> patientList) {
-        for (String patient : patientList) {
-            String[] patientDetails = patient.split(", ");
+    public String findPatientDetails(String patientID) {
+        Patient patient = Patient.getInstance();
+        ArrayList<String> patientList = patient.getPatientList();
+
+        for (String patientInfo : patientList) {
+            String[] patientDetails = patientInfo.split(", ");
             for (String detail : patientDetails) {
                 if (detail.startsWith("Patient ID:") && detail.contains(patientID)) {
-                    return patient; // Return patient information
+                    return patientInfo;
                 }
             }
         }
-        return null; // Return null if patient is not found
+        return null;
     }
 
+    public boolean appointmentExists(String appointmentID) {
+        for (String appointment : appointmentList) {
+            String[] appointmentDetails = appointment.split(", ");
+            for (String detail : appointmentDetails) {
+                if (detail.startsWith("Appointment ID:") && detail.contains(appointmentID)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
+    public void updateAppointment(String appointmentID, String patientID, String treatmentID, String date, String time) {
+        for (int i = 0; i < appointmentList.size(); i++) {
+            String appointmentDetails = appointmentList.get(i);
+            String[] details = appointmentDetails.split(", ");
+
+            if (details[0].contains(appointmentID)) {
+                appointmentList.set(i, String.format("Appointment ID: %s, Patient ID: %s, Treatment ID: %s, Date: %s, Time: %s",
+                        appointmentID, patientID, treatmentID, date, time));
+                break;
+            }
+        }
+        System.out.println("Appointment List: " + appointmentList);
+    }
+
+    public String getAppointmentDetails(String appointmentID) {
+        for (String appointment : appointmentList) {
+            String[] appointmentDetails = appointment.split(", ");
+            for (String detail : appointmentDetails) {
+                if (detail.startsWith("Appointment ID:") && detail.contains(appointmentID)) {
+                    return appointment;
+                }
+            }
+        }
+        return "Appointment ID not found";
+    }
+
+    public ArrayList<String> getAppointmentsFilteredByDate(String dayOfWeek) {
+        return appointmentList.stream()
+                .filter(appointment -> appointment.contains("Date: " + dayOfWeek))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public void printAppointmentList() {
+        System.out.println("Appointment List:");
+        for (String appointmentInfo : appointmentList) {
+            System.out.println(appointmentInfo);
+        }
+    }
 }

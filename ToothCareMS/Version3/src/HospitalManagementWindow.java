@@ -15,7 +15,7 @@ public class HospitalManagementWindow extends JFrame {
     private JComboBox datePicker;
 
     // Logic component
-    private Appointment appointmentLogic = new Appointment(); // Managing appointments
+    Appointment appointmentLogic = Appointment.getInstance();
 
     // Constructor
     public HospitalManagementWindow() {
