@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -66,6 +67,16 @@ public class Appointment {
             }
         }
         return null;
+    }
+    public static void generateInvoice(String appointmentID, String patientName, String treatment, int treatmentFee, int registrationFee) {
+        int total = treatmentFee + registrationFee;
+
+        // Display the invoice details
+        String invoiceMessage = String.format("***Invoice***\nAppointment ID: %s\nPatient Name: %s\nTreatment: %s | Treatment Fee: %d\nRegistration Fee: %d\n\nTotal = %d",
+                appointmentID, patientName, treatment, treatmentFee, registrationFee, total);
+
+        // Show a dialog box with the invoice details
+        JOptionPane.showMessageDialog(null, invoiceMessage, "Invoice", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public boolean appointmentExists(String appointmentID) {
